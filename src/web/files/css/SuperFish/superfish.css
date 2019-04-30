@@ -1,0 +1,177 @@
+/* 
+    Created on : Sep 10, 2015
+    Author     : juandiego@comtor.net
+*/
+
+.sf-menu, .sf-menu * {
+    margin: 0;
+    padding: 0;
+    font-size: 9pt;
+    list-style: none;
+}
+
+.sf-menu {
+    float: right;
+}
+
+.sf-menu li:hover > ul, .sf-menu li.sfHover > ul {
+    display: block;
+}
+
+.sf-menu > li > a {
+    color: white !important;
+}
+
+.sf-menu a {
+    padding: 0em 1em;
+    text-decoration: none;
+    zoom: 1;
+}
+
+/* MENÚ */
+.sf-menu li {
+    position: relative;
+}
+
+.sf-menu > li {
+    float: left;
+    min-width: 50px;
+    height: 18px;
+    padding: 6px 10px;
+    color: #FFFFFF;
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    vertical-align: central;
+    -moz-transition: background .2s;
+    -webkit-transition: background .2s;
+    -ms-transition: background .2s;
+    transition: background .2s;
+}
+
+.sf-menu > li:hover, .sf-menu li.sfHover {
+    color: #FFFFFF;
+    background: var(--secondary-color-light);
+    -moz-transition: none;
+    -webkit-transition: none;
+    -ms-transition: none;
+    transition: none;
+}
+
+.user-privileges {
+    border-bottom: 2px solid var(--secondary-color-light);
+    padding: 0.75em 1em;
+    color: #FFFFFF;
+    background: var(--secondary-color);
+}
+
+.user-privileges > span:not(:first-of-type) {
+    display: list-item;
+}
+
+#profilesTitle {
+    font-weight: bold;
+}
+
+/* MENU */
+
+/* SUBMENUS DESPLEGABLES */
+.sf-menu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+    min-width: 10.8em;
+    text-align: left;
+    background-color: #FFFFFF;
+    box-shadow: 0px 9px 10px rgba(101, 105, 108, 0.5);
+}
+
+/* MENU DE USUARIO */
+.user-menu > li:nth-child(1) > ul:nth-child(3) {
+    right: 0;
+    left: initial;
+    width: 200px;
+    max-width: 200px;
+}
+
+.sf-menu ul li a {
+    display: block;
+    position: relative;
+    padding: 10px 20px;
+    color: black;
+}
+
+.sf-menu ul li a:hover {
+    background-color: #f2f2f2;
+}
+/* SUBMENÚS DESPLEGABLES */
+
+/*** ESSENTIAL STYLES ***/
+.sf-menu ul ul {
+    top: 0;
+    left: 100%;
+}
+
+.sf-arrows .sf-with-ul {
+    padding-right: 2.5em;
+    *padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+
+
+.sf-arrows .sf-with-ul:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    width: 0;
+    height: 0;
+    margin-top: -3px;
+    border: 5px solid transparent;
+    border-top-color: #DFEEFF;
+    border-top-color: rgba(255, 255, 255, 0.5);
+}
+
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+    border-top-color: white;
+}
+
+.sf-arrows ul .sf-with-ul:after {
+    margin-top: -5px;
+    margin-right: -3px;
+    border-color: transparent;
+    border-left-color: #DFEEFF;
+    border-left-color: rgba(255, 255, 255, 0.5);
+}
+
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+    border-left-color: white;
+}
+
+#privileges_title {
+    display: inline-block;
+    width: 100%;
+    font-weight: bolder;
+    font-size: 11pt;
+}
+
+#privileges_span {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#privileges_list {
+    display: initial;
+    position: initial;
+    list-style: circle;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#privileges_list li {
+    list-style: circle;
+}

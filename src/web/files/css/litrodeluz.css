@@ -1,0 +1,78 @@
+/* 
+    Created on : Apr 30, 2019, 2:13:18 PM
+    Author     : juandiego
+*/
+
+@import url(advanced/HtmlTooltip/HtmlLinkTooltip.css);
+@import url("jQueryUI/comtor-theme/jquery-ui-1.12.1.custom.min.css");
+@import url("SuperFish/superfish.css");
+@import url("SuperFish/superfish-vertical.css");
+@import url("SuperFish/superfish-navbar.css");
+@import url(advanced/HtmlCalendar/css/jscal2.css);
+
+@font-face {
+    font-family: OpenSans;
+    src : url('../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: OpenSans-Bold;
+    src : url('../fonts/OpenSans-Bold.ttf');
+}
+
+:root {
+    --main-color: #53BAEA;
+    --main-color-dark: #4499C0;
+    
+    --secondary-color: #000000;
+    --secondary-color-light: #212529;
+
+    --main-bg-color: #F2F2F2;
+    --main-bg-darker-color: #EFEFEF;
+
+    --ok-color: #28A745;
+    --ok-color-light: rgb(112, 218, 136);
+    --error-color: #DC3545;
+    --error-color-light: rgb(236, 126, 137);
+
+    /* BOTONES */
+    --main-button-color: #007bff;
+    --main-button-hover: #0069d9;
+    --main-button-active: #0062cc;
+    --main-button-border:#007bff;
+    --main-button-border-hover: #0069d9;
+    --main-button-border-active: #83bbf8;
+    --main-button-text-color: #FFFFFF;
+
+    --navbar-bg-color: #000000;
+    
+    
+    --form-input-text-color: #495057;
+    
+    
+    --table-header: #212529;
+    --table-row-even: #f2f2f2;
+    --table-row-odd: #ffffff;
+    --table-border: #32383e;
+}
+
+footer.sticky-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+footer.sticky-footer .copyright {
+    line-height: 1;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: white;
+}
