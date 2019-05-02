@@ -221,88 +221,65 @@ div#content {
 /* Tablas */
 table, 
 th, 
-td,
-.addInfo table, 
-.addInfo th, 
-.addInfo td {
-    border: 1px solid var(--table-border);
+td {
     color: #000000;
     font-size: 11pt;
+    border-collapse: collapse;
 }
 
-form table, 
-form th, 
-form td {
-    border: 2px solid white;
-    color: #000000;
+th, 
+td {
+    padding: 0.3rem;
 }
 
-table.adminlist, 
-table.report, 
-table.summary_table {
+table {
     width: 98%;
-    margin: 20px auto;
     border-collapse: collapse;
     padding: 0;
+    margin: 20px auto;
 }
 
-table.adminlist th, 
-table.report th, 
-table.summary_table th, 
-.addInfo th,
-div.finderObjList > table.adminlist th { 
-    height: 32px;
+table th { 
+    height: 1.5rem;
     font-family: OpenSans-Bold;
     color: #FFFFFF; 
     background-color: var(--table-header); 
-    padding: 0 5px;
+    border: 1px solid var(--table-border);
+    text-align: center;
 }
 
-table.adminlist th a {
+table th a {
     color: #FFFFFF;
     text-decoration: none;
 }
 
-table.adminlist th {
-    text-align: center;
-}
-
-table.adminlist td {
-    padding: 0 10px;
+table td {
     text-align: left;
+    border: 1px solid #dee2e6;
 }
 
-table.adminlist tr:nth-child(odd), 
-table.report tr:nth-child(odd), 
-table.summary_table tr:nth-child(odd),
-.addInfo tr:nth-child(odd), 
-.addInfo tr:nth-child(odd) {
+table tr:nth-child(odd) {
     background-color: var(--table-row-odd);
 }
 
-table.adminlist tr:nth-child(even), 
-table.report tr:nth-child(even), 
-table.summary_table tr:nth-child(even),
-.addInfo tr:nth-child(even), 
-.addInfo tr:nth-child(even) {
+table tr:nth-child(even) {
     background-color: var(--table-row-even);
 }
 
-table.adminlist tr:hover,
-table.report tr:hover, 
-table.summary_table tr:hover,
-.addInfo tr:hover {
+table tr:hover {
     color: white;
-    background-color: #FFA54F;
+    background-color: var(--main-color);
     cursor: pointer;
+}
+
+table.adminlist {
+    margin: 20px auto;
 }
 
 /* Opciones del CRUD (Editar, Eliminar, etc...)*/
 table.adminlist tr:first-child th:last-of-type, 
 table.adminlist td:last-child {
-    /*! border: 1px solid transparent; */
     padding: 3px 10px;
-    /*! background-color: #F8F8FF; */
     width: 4%;
 }
 
@@ -442,8 +419,10 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"]) {
     font-size: 16px;
     text-align: left;
     color: #474745;
-     border: 1px solid #ced4da;
+    border: 1px solid #ced4da;
     background-color: #f2f2f2;
+    width: 80%;
+    display: inline-block;
 }
 
 textarea:focus, 
@@ -482,7 +461,7 @@ table.comtorbox form {
     padding-top: 7px;
     padding-bottom: 5px;
     padding-left: 20px;
-    margin-bottom: 20px;
+    /*! margin-bottom: 20px; */
 }
 
 .comtorboxcontainer table tr:nth-of-type(1n+2):not(last) td {
@@ -491,9 +470,10 @@ table.comtorbox form {
 
 /**Support for div forms*/
 div.DivFormField {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: left;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: left !important;
+    clear: both;
 }
 
 div.comtorboxfield{
@@ -523,12 +503,6 @@ div.comtorboxfield span:last-of-type{
     text-align: left;
 }
 
-/**Buttons row*/
-div.comtorbox > div > div:last-of-type {
-    text-align: right;
-    margin-top: 7px;
-    padding: 7px 17px 20px 0;
-}
 
 div.DivFormField span {
     display: inline-block;
@@ -544,6 +518,7 @@ div.DivFormField span:nth-of-type(3),
 span.field_element {
     max-width: 593px;
     text-align: left;
+    width: 40%;
 }
 
 div.DivFormField span:last-of-type {
@@ -586,20 +561,21 @@ div.comtorbox{
 }
 
 .div_hidden {
-    width: 940px;
+    width: 60%;
     margin-top: 20px;
     padding: 0 !important;
+    display: block;
 }
 
-.advancedSearchTitle:not(#extendedLoginContainer_link):not(#extendedLoginContainer_div) {
+.advancedSearchTitle {
     display: inline-block;    
-    width: 895px;
+    width: calc(100% - 30px);
     border-radius: 7px 7px 0 0;
-    padding: 10px 15px 10px 30px;
+    padding: 10px 0 10px 30px;
     font-weight: bold;
     color: #FFFFFF;
     text-align: left;
-    background-color: #4076A6;
+    background-color: var(--secondary-color-light);
     background-image: url(../images/search_white_24.png);
     background-position: 5px center;
     background-repeat: no-repeat;
@@ -607,15 +583,41 @@ div.comtorbox{
     cursor: pointer;
 }
 
-.advancedSearchDiv:not(#extendedLoginContainer_link):not(#extendedLoginContainer_div) {
+.advancedSearchDiv {
     width: 100%;
+    display: block;
 }
 
 .advancedSearchDiv form {
     margin: 0 !important;
     border-radius: 0 0 7px 7px !important;
     box-shadow: none;
-    border: 5px solid #4076A6;
+    border: 2px solid var(--secondary-color-light);
+    padding: 0;
+    width: calc(100% - 4px) !important;
+}
+
+.advancedSearchDiv form div.DivFormField span:first-child {
+    display: none;
+}
+
+.advancedSearchDiv form div.DivFormField span:nth-child(2) {
+    width: 25%; 
+    float: left;
+    /*! padding: 0; */
+}
+
+.advancedSearchDiv form div.DivFormField span:nth-child(3) {
+    width: 65%;
+    text-align: left;
+}
+
+.advancedSearchDiv form div.DivFormField span:nth-child(3) a {
+    text-decoration: none;
+}
+
+.advancedSearchDiv form div.DivFormField span:last-child {
+    display: none;
 }
 
 .advancedSearchDiv form .comtorbox > div:nth-child(2) {
@@ -640,7 +642,7 @@ div.div_hidden div.comtorboxheader{
 }
 
 .subtitle {
-    background-color: #FF9501;
+    background-color: var(--secondary-color);
     color: white;
     font-weight: bolder;
     font-size: 16pt;
@@ -712,6 +714,11 @@ form .comtorboxheader {
 .tableIndex span > table {
     border: none;
     border-collapse: collapse;
+    width: 100%;
+}
+
+.tableIndex table tr {
+    background-color: initial;
 }
 
 .tableIndex table td {
@@ -731,7 +738,7 @@ form .comtorboxheader {
 #welcome {
     font-size: 22px;
     font-weight: bold;
-    color: #5785B0;
+    color: var(--main-color);
 }
 
 .tableIndex span {
@@ -749,7 +756,7 @@ form .comtorboxheader {
 
 div#content form:not(#loginForm):not(.toolbar_finder) {
     width: 60%;
-    min-width: 930px;
+    /*! min-width: 930px; */
     margin: 20px auto;
     border-radius: 10pt;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -855,64 +862,32 @@ table.helperMessage td {
 #content > a:last-child {
     text-decoration: none;
     margin-bottom: 20px;
+    display: block;
 }
 
 #cancel {
-    margin-bottom: 20px;
+    /*! margin-bottom: 20px; */
 }
 
 #product_category_visible {
     width: 430px;
 }
 
-.messageFormTable table, 
-messageFormTable td, 
-messageFormTable th {
-    border: none;
-}
-
-.addInfo table, 
-.addInfo th, 
-.addInfo td {
-    border: 2px solid white;
-    color: #000000;
-}
-
-.addInfo {
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    padding: 0;
-}
-
-.addInfo tr:nth-child(odd), 
-.addInfo tr:nth-child(odd) {
-    background-color: #E8F3FD;
-}
-
-.addInfo tr:nth-child(even), 
-.addInfo tr:nth-child(even) {
-    background-color: #BDD8F1;
-}
-
-.addInfo tr:hover {
-    color: white;
-    background-color: #FFA54F;
-    cursor: pointer;
-}
-
-.addInfo th { 
-    height: 32px;
-    padding-left: 3px;
-    font-family: OpenSans-Bold;
-    color: #FFFFFF; 
-    background-color: #FF9501; 
+.messageFormTable {
+    width: 60%;
+    margin: 0 auto;
     text-align: center;
 }
 
-.addInfo td {
-    padding: 10px;
-    text-align: left;
+.messageFormTable table, 
+.messageFormTable td, 
+.messageFormTable th {
+    border: none;
+    text-align: center;
+}
+
+.messageFormTable tr:hover {
+    background-color: initial;
 }
 
 .alertMessage {
@@ -1012,10 +987,6 @@ messageFormTable th {
     font-size: 0.90em;
 }
 
-#profileAccordion {
-    min-width: 370px;
-}
-
 #profileAccordion .accordionSections span {
     display: block !important;
     width: 100% !important;
@@ -1026,47 +997,12 @@ messageFormTable th {
 }
 
 #profileAccordion .accordionSections {
-    padding: 20px 0 20px 20px!important;
+    padding: 20px 0 20px 20px !important;
     margin: 0 !important;
 }
 
 #profileAccordion .accordionSections span input[type="checkbox"] {
     margin: 5px 15px 5px 0;
-}
-
-#cms_page_form, 
-#cms_layout_form {
-    width: 90%;
-}
-
-.emphasis {
-    font-weight: bolder !important;
-}
-
-.cke_source {
-    padding: 10px !important;    
-}
-
-.dinamic_form {
-    border: 5px solid #4E789E;
-    width: 50%;
-    padding:0 0px 20px 0px;
-    margin-top: 10px;
-    border-radius: 20px;
-    float: left;
-    background-color: white;
-}
-
-.dinamic_form_title {
-    background-color: #4E789E;
-    color: white;
-    font-weight: bolder;
-    font-size: 17px;
-    padding: 10px 20px;
-    text-align: left;
-    margin-bottom: 15px;
-    display: block;
-    border-radius: 10px 10px 0 0;
 }
 
 #about_window_container {
@@ -1125,4 +1061,100 @@ messageFormTable th {
 table td img {
     margin: 0 auto;
     display: block;
+}
+
+form div.DivFormField span {
+    display: inline-block;
+    min-height: 1rem;
+}
+
+form div.DivFormField span:first-child {
+    width: 10%;
+    float:left;
+}
+
+form div.DivFormField span:nth-child(2) {
+    width: 15%; float:left;
+}
+
+form div.DivFormField span:nth-child(3) {
+    width: 65%; 
+}
+
+form div.DivFormField span:nth-child(3) a {
+    text-decoration: none;
+}
+
+form div.DivFormField textarea {
+    max-width: 500px;
+}
+
+form div.DivFormField span:last-child {
+    width: 10%; 
+}
+
+input#filter {
+    width: 25%;
+    background-color: white;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    width: initial !important;
+}
+
+.calendar_class {
+    width: 25% !important;
+}
+
+.ui-datepicker-calendar td a:hover {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+}
+
+.ui-datepicker-calendar tr:hover {
+    background-color: initial;
+}
+
+#profileAccordion h3 {
+    font-weight: bold;
+    text-align: center;
+}
+
+#profileAccordion h3 span:first-child {
+    display: none;
+}
+
+#profile-selector,
+#profile-selector th,
+#profile-selector td {
+    border: initial;
+}
+
+#profile-selector tr {
+    background-color: initial;
+}
+
+ul {
+    margin: 0;
+}
+
+.messageFormTable,
+.messageFormTable td {
+    border: none;
+}
+
+.comtorbox div:nth-child(2) {
+    padding: 20px;
+}
+
+.comtorbox div:nth-child(2) > div:last-of-type {
+    text-align: right;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
 }

@@ -16,7 +16,7 @@
 }
 
 .question_box_title_panel {
-    background-color: #ff9501;
+    background-color: var(--secondary-color-light);
     color: white;
     border-radius: 10px 0 0 10px;
     border-right: 1px solid black;
@@ -82,17 +82,11 @@
     min-width: initial !important;
 }
 
-#divformrow_sponsor {
-    margin: 0;
-    padding: 0;
-    text-align: initial;
-}
-
 #nav_menu_tab {
     width: 50px;
     margin: 0 !important;
     display: inline-block;
-    background: #2A76A8;
+    background: var(--main-color);
     float: left;
     height: 100%;
     cursor: pointer;
@@ -131,15 +125,6 @@
     text-align: center;
 }
 
-#update_status {
-    display: block;
-    text-align: left;
-    padding: 10px 20px;
-    background: #FF9501;
-    color: white;
-    border: 2px solid white;
-}
-
 .conventions {
     width: 100%;
     margin-top: 0 !important;
@@ -176,6 +161,53 @@
 
 #w3w_map_frame {
     width: 80%;
-    height: 500px; 
-        
+    height: 500px;         
+}
+
+#zone_table,
+#zone_table th, 
+#zone_table td {
+    border: 1px solid var(--table-border);
+    color: #000000;
+    font-size: 11pt;
+}
+
+#zone_table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    padding: 0;
+}
+
+#zone_table th { 
+    height: 32px;
+    font-family: OpenSans-Bold;
+    color: #FFFFFF; 
+    background-color: var(--table-header); 
+    padding: 0 5px;
+    text-align: center;
+}
+
+#zone_table td {
+    padding: 0 10px;
+    text-align: left;
+}
+
+#zone_table tr:nth-child(odd) {
+    background-color: var(--table-row-odd);
+}
+
+#zone_table tr:nth-child(even) {
+    background-color: var(--table-row-even);
+}
+
+#zone_table td input {
+    width: initial;
+    margin: 0.5rem;
+}
+
+.deleteSection {
+    display: block;
+    margin: auto;
+    clear: both;
 }
