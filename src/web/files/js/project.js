@@ -63,9 +63,25 @@ function getEndpoint(endpoint, action_type) {
 
 function getHotspots() {
     var sponsor = $("select#sponsor").val();
-    var url = "/litrodeluz/radius/webservices/hotspot_services/map/get_hotspots?sponsor=" + sponsor;
-    
+    var country = $("select#country").val();
+    var zone = $("select#zone").val();
+    var start_date = $("input#start_date").val();
+    var end_date = $("input#end_date").val();
+
+    var url = "/litrodeluz/radius/webservices/hotspot_services/map/get_hotspots?sponsor=" + sponsor + "&country=" + country + "&zone=" + zone + "&start_date="
+            + start_date + "&end_date=" + end_date;
+
     addAjaxMarkerList(map_tracker, coordinates_tracker, markers_tracker, null, url);
+}
+
+function clearSearch() {
+    $("select#sponsor").val("0");
+    $("select#country").val("");
+    $("select#zone").empty();
+    $("select#zone").append('<option selected=\"selected\" value=\"0\">Todas</option>');
+    $("select#zone").val("0");
+    $("input#start_date").val("");
+    $("input#end_date").val("");
 }
 
 $(document).ready(function () {
@@ -84,9 +100,4 @@ $(document).ready(function () {
         event.preventDefault();
         $(this).parent().remove();
     });
-
-
-
 });
-
-

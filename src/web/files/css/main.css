@@ -46,10 +46,11 @@ input[type="reset"]:active {
 }
 
 select {
-    padding: 4px;
+    padding: 0.5rem;
     color: #474745;
     background-color: #f2f2f2;
-    border-radius: 7px;
+    border-radius: 0.6rem;
+    width: 100%;
 }
 
 /* CABECERA */
@@ -58,7 +59,6 @@ select {
     position: relative;
     display: block;
     width: 100%;
-    min-width: 900px;
     height: 92px;
     padding-top: 8px;
     background-color: var(--secondary-color);
@@ -103,7 +103,7 @@ select {
 }
 
 #top #header #title {
-    font-size: 1.4vw;
+    font-size: 1.5rem;
     height: 100%;
     display: block;
     line-height: 57px;
@@ -139,7 +139,7 @@ div.menu {
     cursor: pointer;
 }
 
-/* MenÃ?Æ?Ã?Âº del Sistema */
+/* Menu del Sistema */
 div.menu #classicMenu {
     display: block;
     float: left;
@@ -165,7 +165,6 @@ div#content * {
 div#content {
     display: block;
     width: 100%;
-    min-width: 900px;
     min-height: 100%;
     text-align: center;
 }
@@ -415,13 +414,13 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"]) {
     margin-right: 10px; 
     border: 1pt solid transparent;
     border-radius: 7px;
-    padding: 5px;
+    padding: 0.5rem;
     font-size: 16px;
     text-align: left;
     color: #474745;
     border: 1px solid #ced4da;
     background-color: #f2f2f2;
-    width: 80%;
+    width: calc(100% - 1rem);
     display: inline-block;
 }
 
@@ -507,22 +506,6 @@ div.comtorboxfield span:last-of-type{
 div.DivFormField span {
     display: inline-block;
     vertical-align: middle;
-}
-
-div.DivFormField span:first-of-type {
-    width: 5%;
-    text-align: center;
-}
-
-div.DivFormField span:nth-of-type(3),
-span.field_element {
-    max-width: 593px;
-    text-align: left;
-    width: 40%;
-}
-
-div.DivFormField span:last-of-type {
-    text-align: left;
 }
 
 #footer {
@@ -755,8 +738,7 @@ form .comtorboxheader {
 }
 
 div#content form:not(#loginForm):not(.toolbar_finder) {
-    width: 60%;
-    /*! min-width: 930px; */
+    width: 80%;
     margin: 20px auto;
     border-radius: 10pt;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -769,7 +751,6 @@ div.comtorbox {
 div.DivFormField span:nth-of-type(2),
 span.field_label {
     width: 25%;
-    padding: 0 25px 0 12px;
     font-weight: bold;
     text-align: right;
 }
@@ -1063,25 +1044,28 @@ table td img {
     display: block;
 }
 
-form div.DivFormField span {
+form div.DivFormField > span {
     display: inline-block;
     min-height: 1rem;
 }
 
-form div.DivFormField span:first-child {
-    width: 10%;
-    float:left;
+form div.DivFormField > span:first-child {
+    width: 2%;    
+    display: inline-block;
 }
 
 form div.DivFormField span:nth-child(2) {
-    width: 15%; float:left;
+    width: calc(20% - 1rem); 
+    padding: 0 0.5rem;
+    word-wrap: break-word;
 }
 
-form div.DivFormField span:nth-child(3) {
-    width: 65%; 
+form div.DivFormField > span:nth-child(3) {
+    width: calc(76% - 1rem); 
+    padding: 0.5rem;
 }
 
-form div.DivFormField span:nth-child(3) a {
+form div.DivFormField > span:nth-child(3) a {
     text-decoration: none;
 }
 
@@ -1089,13 +1073,28 @@ form div.DivFormField textarea {
     max-width: 500px;
 }
 
-form div.DivFormField span:last-child {
-    width: 10%; 
+form div.DivFormField > span:last-child {
+    width: 2%; 
+    text-align: center;
 }
 
-input#filter {
+.tooltip_class {
+    display: block;
+    text-align: center !important;
+    margin: auto;
+}
+
+.tooltip_class span,
+.tooltip_class img {
+    display: block;
+    margin: auto;
+}
+
+input#filter,
+input#keyword {
     width: 25%;
     background-color: white;
+    margin: auto 1rem;
 }
 
 input[type=radio],
@@ -1145,11 +1144,11 @@ ul {
     border: none;
 }
 
-.comtorbox div:nth-child(2) {
+.comtorbox > div:nth-child(2) {
     padding: 20px;
 }
 
-.comtorbox div:nth-child(2) > div:last-of-type {
+.comtorbox > div:nth-child(2) > div:last-of-type {
     text-align: right;
 }
 
@@ -1157,4 +1156,115 @@ p {
     margin: 0;
     padding: 0;
     font-size: 1rem;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    div#content form:not(#loginForm):not(.toolbar_finder) {
+        width: 90%;
+    }
+
+    form div.DivFormField span:nth-child(2) {
+        width: 95%; 
+        text-align:left;
+    }
+
+    form div.DivFormField > span:nth-child(3) {
+        width: 95%; 
+        padding: 0.5rem;
+    }
+
+    form div.DivFormField > span:nth-child(3) a {
+        text-decoration: none;
+    }
+    
+    form div.DivFormField textarea {
+        max-width: 500px;
+    }
+
+    form div.DivFormField > span:last-child {
+        width: 2%; 
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    div#content form:not(#loginForm):not(.toolbar_finder) {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    div#content form:not(#loginForm):not(.toolbar_finder) {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 991px) {
+    #top {
+        height: auto;
+    }
+    
+    .menu {
+        height: auto !important;
+    }
+
+    #classicMenu {
+        width: 100%;
+    }
+
+    div.menu #classicMenu {
+        float: initial;
+    }
+
+    #classicMenu .sf-menu {
+        float: initial;
+    }
+
+    #classicMenu .sf-menu > li {
+        float: initial;
+        min-width: initial;  
+        height: 1.5rem;
+    }
+
+    #classicMenu + span {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    #classicMenu + span .sf-menu {
+        float: initial;
+        display: block;
+    }
+
+    #classicMenu + span .sf-menu > li {
+        float: initial;
+        height: 1.5rem;
+    }
+
+    #sysMenu > li:not(:first-child) {
+        display: none;
+    }
+    
+    .responsive > li {
+        display: block !important;;
+    }
+
+    .menu-icon {
+        float: right;
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: 77px;
+        z-index: 999;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
 }

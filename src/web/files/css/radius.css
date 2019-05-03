@@ -211,3 +211,22 @@
     margin: auto;
     clear: both;
 }
+
+form#hotspot_map_filter {
+    margin: 10px !important;
+    width: initial !important;
+}
+
+
+form#hotspot_map_filter div.DivFormField > span:first-child,
+form#hotspot_map_filterdiv.DivFormField > span:last-child{
+    display: none;
+}
+
+form#hotspot_map_filter div.DivFormField span:nth-child(2) {
+    width: calc(25% - 1rem); 
+}
+
+form#hotspot_map_filter div.DivFormField > span:nth-child(3) {
+    width: calc(75% - 1rem); 
+}
