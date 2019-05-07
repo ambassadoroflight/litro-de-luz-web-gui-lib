@@ -116,6 +116,8 @@ function addAjaxMarkerList(map, mapCoordinates, mapMarkers, polyline, url) {
         if ((polyline !== null) && (polyline.getPath().length > length)) {
             polyline.getPath().clear();
         }
+        
+        map.setZoom(3);
 
         for (var i = 0; i < length; i++) {
             var element = data[i];

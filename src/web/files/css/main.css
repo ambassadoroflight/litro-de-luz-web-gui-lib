@@ -131,7 +131,6 @@ select {
 div.menu {
     display: block;
     width: 100%;
-    min-width: 900px;
     height: 30px;
     margin-top: 5px;
     text-align: right;
@@ -141,8 +140,9 @@ div.menu {
 
 /* Menu del Sistema */
 div.menu #classicMenu {
-    display: block;
+    display: inline-block;
     float: left;
+    float: left inherit;
 }
 
 /* MenÃ?Æ?Ã?Âº del Usuario*/
@@ -1131,8 +1131,29 @@ input[type=checkbox] {
     border: initial;
 }
 
+
+#profile-selector th,
 #profile-selector tr {
+    color: black;
     background-color: initial;
+}
+
+#profile-selector td {
+    width: 48%;
+}
+
+#profile-selector tr:nth-child(2) td:nth-child(2) {
+    width: 2%;
+}
+
+
+#add_profile_button,
+#delete_profile_button {
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: initial;
+    margin-right: initial;
 }
 
 ul {
@@ -1213,11 +1234,11 @@ p {
     }
 
     #classicMenu {
-        width: 100%;
+        width: calc(100% - 30px);
     }
 
     div.menu #classicMenu {
-        float: initial;
+        float: left;
     }
 
     #classicMenu .sf-menu {
@@ -1255,16 +1276,25 @@ p {
     }
 
     .menu-icon {
-        float: right;
-        display: block;
-        position: absolute;
-        right: 5px;
-        top: 77px;
-        z-index: 999;
+        display: inline;
         color: white;
         text-decoration: none;
         font-weight: bold;
         font-size: 1.5rem;
+        text-align: right;
+        padding-right: 0.5rem;
+    }
+    
+    .menu > span:last-child { 
+        float: left;
+    }
+    
+    .sf-menu  ul {  
+        width: 50% !important;
+    }
+    
+    .sf-menu a {
+        padding: 0;
     }
 
 }

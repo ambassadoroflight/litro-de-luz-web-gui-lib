@@ -7,47 +7,74 @@
     max-height: 300px;
 }
 
-.question_box {
-    border: 1px solid black;
-    margin: 1rem;
-    width: 95%;
-    border-radius: 10px;
-    height: 300px;
+.mb-3,
+.my-3 {
+    margin-bottom: 1rem !important;
 }
 
-.question_box_title_panel {
+.mt-3,
+.my-3 {
+    margin-top: 1rem !important;
+}
+
+.card,
+.card-header,
+.card-content {
+    margin-right: initial !important;
+    margin-left: initial !important;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    word-wrap: break-word;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
     background-color: var(--secondary-color-light);
+    border-bottom: 1px solid rgba(0, 0 , 0, .125);
     color: white;
-    border-radius: 10px 0 0 10px;
-    border-right: 1px solid black;
-    margin: 0;
-}
-
-.question_box_title_panel span {
-    display: block;
-    font-weight: bolder;
-
-}
-
-.question_box_title_panel span:first-child {
-    margin-top: 35%;
-    font-size: 1.5rem;
+    font-weight: bold;
     text-decoration: underline;
 }
 
-.question_box_title_panel span:last-child {
-    font-size: 1.2rem;
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
 }
 
-.question_box_content_panel {
-    margin: 0;
-    overflow-y: auto;
-    height: 300px;
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    margin-left: initial !important;
+    margin-right: initial !important;
 }
 
-.chartjs-render-monitor {
-    height: 300px !important;
+.card-body table {
+    margin: auto;
+    width: 100%;
 }
+
+.card-body table td {
+    text-align: center !important;
+}
+
+.card-body table td:first-child {
+    width: 1%;
+}
+
 .map {
     height: 100vh;
     width: calc(100% - 550px);
@@ -229,4 +256,10 @@ form#hotspot_map_filter div.DivFormField span:nth-child(2) {
 
 form#hotspot_map_filter div.DivFormField > span:nth-child(3) {
     width: calc(75% - 1rem); 
+}
+
+canvas {
+    max-height: 400px;
+    width: auto !important;
+    cursor: pointer;
 }

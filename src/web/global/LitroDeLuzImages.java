@@ -46,6 +46,6 @@ public final class LitroDeLuzImages {
     public static final String HOTSPOT_CONTROLLER = CONTROLLER_ICON_PREFIX + "hotspot-controller.png";
 
     public static final String FILM_GENRE_CONTROLLER = CONTROLLER_ICON_PREFIX + "film_genre_controller.png";
-    public static final String MUSIC_GENRE_CONTROLLER = CONTROLLER_ICON_PREFIX + "music_genre_controller.png";
+    public static final String MUSIC_GENRE_CONTROLLER = CONTROLLER_ICON_PREFIX + "musicgenre-controller.png";
     public static final String DUMP_CONTROLLER = CONTROLLER_ICON_PREFIX + "dump-controller.png";
 }
