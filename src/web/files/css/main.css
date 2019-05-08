@@ -1032,6 +1032,11 @@ table.helperMessage td {
     text-align: center;
 }
 
+#about_window h3 {
+    font-size: 10pt;
+    text-align: center;
+}
+
 #about_footer {
     font-size: 9pt;
     text-align: center;

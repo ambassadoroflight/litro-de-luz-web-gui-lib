@@ -60,6 +60,8 @@
     padding: 1.25rem;
     margin-left: initial !important;
     margin-right: initial !important;
+    max-height: 490px;
+    overflow-y: auto;
 }
 
 .card-body table {
@@ -259,7 +261,5 @@ form#hotspot_map_filter div.DivFormField > span:nth-child(3) {
 }
 
 canvas {
-    max-height: 400px;
-    width: auto !important;
     cursor: pointer;
 }
